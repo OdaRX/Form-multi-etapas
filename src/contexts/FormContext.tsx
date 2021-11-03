@@ -11,7 +11,7 @@ type State = {
 }
 
 type Action = {
-  type: FormAcions
+  type: FormActions
   payload: any
 }
 
@@ -37,7 +37,7 @@ const initialData: State = {
 const FormContext = createContext<ContextType | undefined>(undefined)
 
 // Reducer
-export enum FormAcions {
+export enum FormActions {
   setCurrentStep,
   setName,
   setLevel,
@@ -46,15 +46,15 @@ export enum FormAcions {
 }
 const formReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case FormAcions.setCurrentStep:
+    case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload }
-    case FormAcions.setName:
+    case FormActions.setName:
       return { ...state, name: action.payload }
-    case FormAcions.setLevel:
+    case FormActions.setLevel:
       return { ...state, level: action.payload }
-    case FormAcions.setEmail:
+    case FormActions.setEmail:
       return { ...state, email: action.payload }
-    case FormAcions.setGithub:
+    case FormActions.setGithub:
       return { ...state, github: action.payload }
     default:
       return state
