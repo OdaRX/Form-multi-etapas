@@ -1,12 +1,11 @@
+import { FormProvider } from './contexts/FormContext'
 import { Router } from './router'
 
 const App = () => {
   return (
-    <>
-      <h1>Hello world</h1>
-
+    <FormProvider>
       <Router />
-    </>
+    </FormProvider>
   )
 }
 
